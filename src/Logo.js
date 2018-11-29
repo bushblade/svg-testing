@@ -2,6 +2,16 @@ import React, { useState, useEffect } from 'react'
 // import { Spring, animated, config } from 'react-spring'
 import posed from 'react-pose'
 
+const Seed = posed.g({
+  from: { opacity: 0 },
+  to: {
+    opacity: 1,
+    transition: {
+      duration: 6000
+    }
+  }
+})
+
 const G = posed.g({
   from: {},
   to: { staggerChildren: 400 }
@@ -148,7 +158,7 @@ export default function Logo() {
             fillRule="evenodd"
           />
         </G>
-        <g id="seed" fill="none" strokeWidth="0.635">
+        <Seed id="seed" fill="none" strokeWidth="0.635" pose={mounted ? 'to' : 'from'}>
           <ellipse ry="8.008" rx="8.008" cy="150.322" cx="-41.574" id="ellipse6792" />
           <ellipse ry="8.008" rx="8.008" cy="142.314" cx="-41.574" id="ellipse6794" />
           <ellipse ry="8.008" rx="8.008" cy="158.329" cx="-41.574" id="ellipse6796" />
@@ -304,7 +314,7 @@ export default function Logo() {
             d="m -27.50423,142.42986 c -1.386319,-0.0243 -2.797069,0.31144 -4.089817,1.04629 -1.273189,0.72375 -2.272275,1.74391 -2.959799,2.92442"
             id="path6962"
           />
-        </g>
+        </Seed>
         <G
           id="tree-right"
           fill="none"
