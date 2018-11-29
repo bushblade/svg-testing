@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 export default function Logo() {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(
+    () => {
+      setMounted(true)
+    },
+    [mounted]
+  )
   return (
     <svg id="svg7651" viewBox="0 0 50.000012 80.178195" height="378.795" width="236.221">
       <g transform="translate(66.584 -95.18)" id="layer1" stroke="#000">
