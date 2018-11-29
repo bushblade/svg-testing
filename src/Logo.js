@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Spring, animated, config } from 'react-spring'
+// import { Spring, animated, config } from 'react-spring'
+import posed from 'react-pose'
 
 export default function Logo() {
   const [mounted, setMounted] = useState(false)
@@ -11,8 +12,6 @@ export default function Logo() {
     [mounted]
   )
   return (
-    // <Spring native from={{ x: 100, opacity: 0 }} to={{ x: 0, opacity: 1 }} config={config.molasses}>
-    //   {({ x, opacity }) => (
     <svg id="svg7651" viewBox="0 0 50.000012 80.178195" height="378.795" width="236.221">
       <g transform="translate(66.584 -95.18)" id="layer1" stroke="#000">
         <path
@@ -423,7 +422,5 @@ export default function Logo() {
         </g>
       </g>
     </svg>
-    // )}
-    // </Spring>
   )
 }
