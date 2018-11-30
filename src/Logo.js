@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-// import { Spring, animated, config } from 'react-spring'
 import posed from 'react-pose'
 
 const Seed = posed.g({
