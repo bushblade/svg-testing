@@ -53,7 +53,12 @@ export default function Logo() {
     [mounted]
   )
   return (
-    <svg id="svg7651" viewBox="0 0 50.000012 80.178195" height="378.795" width="236.221">
+    <svg
+      id="svg7651"
+      viewBox="0 0 50.000012 80.178195"
+      height="378.795"
+      width="236.221"
+      style={{ filter: `drop-shadow(9px 9px 9px rgba(0,0,0,0.3))` }}>
       <g transform="translate(66.584 -95.18)" id="layer1" stroke="#000">
         <Bg
           pose={mounted ? 'to' : 'from'}
