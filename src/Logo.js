@@ -16,12 +16,11 @@ const Wrapper = posed.div({
     x: 0,
     scale: 1,
     transition: {
-      delay: 9000,
-      duration: 300
-      // type: 'spring',
-      // stiffness: 60,
-      // damping: 10,
-      // mass: 0.5
+      delay: 8000,
+      type: 'spring',
+      stiffness: 60,
+      damping: 10,
+      mass: 0.5
     }
   }
 })
@@ -59,12 +58,8 @@ const Path = posed.path({
   to: {
     pathLength: 100,
     opacity: 1,
-    transition: ({ dur = 100 }) => ({
-      duration: dur,
-      type: 'spring',
-      stiffness: 15,
-      damping: 10,
-      mass: 0.9
+    transition: ({ dur = 1000 }) => ({
+      duration: dur
     })
   }
 })
@@ -72,12 +67,8 @@ const Path = posed.path({
 export default function Logo() {
   const [mounted, setMounted] = useState(false)
 
-  useEffect(
-    () => {
-      setMounted(true)
-    },
-    [mounted]
-  )
+  useEffect(() => setMounted(true), [mounted])
+
   return (
     <Wrapper pose={mounted ? 'final' : 'enter'}>
       <SVG
@@ -87,7 +78,7 @@ export default function Logo() {
         height="80.387"
         width="50"
         style={{
-          filter: `drop-shadow(3px 3px 3px rgba(0,0,0,0.3))`
+          filter: `drop-shadow(1px 3px 3px rgba(0,0,0,0.3))`
         }}>
         <g transform="translate(66.584 -95.18)" id="layer1" stroke="#000">
           <Bg
