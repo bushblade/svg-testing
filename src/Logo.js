@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import posed from 'react-pose'
 
 const Wrapper = posed.div({
@@ -16,11 +16,11 @@ const Wrapper = posed.div({
     x: 0,
     scale: 1,
     transition: {
-      delay: 8000,
+      delay: 8200,
       type: 'spring',
       stiffness: 60,
       damping: 10,
-      mass: 0.5
+      mass: 0.6
     }
   }
 })
@@ -65,14 +65,11 @@ const Path = posed.path({
 })
 
 export default function Logo() {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => setMounted(true), [mounted])
-
   return (
-    <Wrapper pose={mounted ? 'final' : 'enter'}>
+    <Wrapper initialPose={'enter'} pose={'final'} onPoseComplete={() => console.log('complete')}>
       <SVG
-        pose={mounted ? 'to' : 'from'}
+        initialPose={'from'}
+        pose={'to'}
         id="svg7651"
         viewBox="0 0 50.000012 80.178195"
         height="80.387"
@@ -195,7 +192,7 @@ export default function Logo() {
               fillRule="evenodd"
             />
           </G>
-          <Seed id="seed" fill="none" strokeWidth="0.635" pose={mounted ? 'to' : 'from'}>
+          <Seed id="seed" fill="none" strokeWidth="0.635">
             <ellipse ry="8.008" rx="8.008" cy="150.322" cx="-41.574" id="ellipse6792" />
             <ellipse ry="8.008" rx="8.008" cy="142.314" cx="-41.574" id="ellipse6794" />
             <ellipse ry="8.008" rx="8.008" cy="158.329" cx="-41.574" id="ellipse6796" />
@@ -352,12 +349,7 @@ export default function Logo() {
               id="path6962"
             />
           </Seed>
-          <G
-            id="tree-right"
-            fill="none"
-            strokeWidth="0.635"
-            strokeLinecap="round"
-            pose={mounted ? 'to' : 'from'}>
+          <G id="tree-right" fill="none" strokeWidth="0.635" strokeLinecap="round">
             <Path
               dur={2000}
               id="r-01"
